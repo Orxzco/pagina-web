@@ -9,70 +9,82 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Dynamic Background Orb -->
+    <div class="bg-orb" id="bg-orb"></div>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="logo-text">Mole del Refugio</div>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#ingredientes">Ingredientes</a></li>
-                <li><a href="#contacto" class="btn-primary-sm">Comprar</a></li>
+                <li><a href="#inicio" class="hover-target">Inicio</a></li>
+                <li><a href="#historia" class="hover-target">Historia</a></li>
+                <li><a href="#ingredientes" class="hover-target">Ingredientes</a></li>
+                <li><a href="#contacto" class="btn-primary-sm hover-target">Comprar</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero" id="inicio">
-        <div class="hero-bg"></div>
-        <div class="hero-content reveal fade-up">
+        <div class="hero-bg parallax-bg"></div>
+        <div class="hero-content">
             <!-- Logo SVG Recreation -->
-            <div class="logo-wrapper">
+            <div class="logo-wrapper reveal-scale">
                 <svg class="chapel-logo" viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
-                    <g stroke="#df8a21" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <g stroke="#df8a21" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <!-- Triangle Roof -->
-                        <path d="M150 160 L240 40 L330 160 Z" fill="rgba(223, 138, 33, 0.05)"/>
-                        <!-- Cross in Triangle -->
-                        <path d="M240 100 L240 130 M225 110 L255 110"/>
+                        <path class="draw-path" d="M150 160 L240 40 L330 160 Z" fill="rgba(223, 138, 33, 0.05)"/>
+                        <path class="draw-path" d="M240 100 L240 130 M225 110 L255 110"/>
                         <!-- Right Building -->
-                        <path d="M330 120 L420 120 L420 160 L330 160"/>
+                        <path class="draw-path" d="M330 120 L420 120 L420 160 L330 160"/>
                         <!-- Tower -->
-                        <path d="M380 120 L380 40 L410 40 L410 120"/>
+                        <path class="draw-path" d="M380 120 L380 40 L410 40 L410 120"/>
                         <!-- Tower Windows -->
-                        <path d="M385 60 C385 50 405 50 405 60 L405 75 L385 75 Z"/>
-                        <path d="M385 85 C385 75 405 75 405 85 L405 100 L385 100 Z"/>
+                        <path class="draw-path" d="M385 60 C385 50 405 50 405 60 L405 75 L385 75 Z"/>
+                        <path class="draw-path" d="M385 85 C385 75 405 75 405 85 L405 100 L385 100 Z"/>
                         <!-- Tower Cross -->
-                        <path d="M395 20 L395 40 M385 30 L405 30"/>
+                        <path class="draw-path" d="M395 20 L395 40 M385 30 L405 30"/>
                         <!-- Base Line -->
-                        <path d="M140 165 L430 165"/>
+                        <path class="draw-path" d="M140 165 L430 165"/>
                         <!-- Swashes -->
-                        <path d="M50 150 Q100 130 120 155 Q130 165 140 165" stroke-width="4"/>
-                        <path d="M450 150 Q400 130 380 155 Q370 165 360 165" stroke-width="4" transform="scale(-1, 1) translate(-500, 0)"/>
+                        <path class="draw-path" d="M50 150 Q100 130 120 155 Q130 165 140 165" stroke-width="4"/>
+                        <path class="draw-path" d="M450 150 Q400 130 380 155 Q370 165 360 165" stroke-width="4" transform="scale(-1, 1) translate(-500, 0)"/>
                     </g>
                 </svg>
             </div>
             
-            <h1 class="brand-title">Mole <span class="brand-italic">del</span> Refugio</h1>
+            <div class="title-container">
+                <h1 class="brand-title reveal-text">Mole <span class="brand-italic">del</span> Refugio</h1>
+            </div>
             
-            <div class="slogan-wrapper">
+            <div class="slogan-wrapper reveal-fade" style="transition-delay: 0.4s">
                 <div class="slogan-line"></div>
                 <h2 class="slogan">El platillo divino</h2>
                 <div class="slogan-line"></div>
             </div>
 
-            <p class="hero-description">
+            <p class="hero-description reveal-fade" style="transition-delay: 0.6s">
                 Un legado de sabor ancestral. Elaborado con ingredientes seleccionados y una receta guardada con devoción para llevar a tu mesa una experiencia verdaderamente celestial.
             </p>
             
-            <div class="hero-actions">
-                <a href="#contacto" class="btn-primary">Descubre el sabor</a>
-                <a href="#historia" class="btn-secondary">Nuestra Tradición</a>
+            <div class="hero-actions reveal-fade" style="transition-delay: 0.8s">
+                <a href="#contacto" class="btn-primary hover-target">Descubre el sabor</a>
+                <a href="#historia" class="btn-secondary hover-target">Nuestra Tradición</a>
+            </div>
+            
+            <div class="scroll-indicator reveal-fade" style="transition-delay: 1.2s">
+                <div class="mouse"></div>
             </div>
         </div>
     </header>
@@ -80,15 +92,16 @@
     <!-- History / Story Section -->
     <section class="section history" id="historia">
         <div class="container layout-split">
-            <div class="split-content reveal fade-right">
-                <span class="badge">Nuestra Esencia</span>
-                <h3 class="section-title">Elaboración Artesanal con Devoción</h3>
-                <p>En Mole del Refugio, cada lote es una ceremonia. Tostamos y molemos a mano nuestra selección exclusiva de chiles, semillas y especias, logrando un equilibrio perfecto entre dulzor, picor y profundidad.</p>
-                <p>El "platillo divino" no es solo un eslogan, es nuestra promesa de calidad y respeto por las recetas de antaño que han sido el corazón de las reuniones familiares.</p>
+            <div class="split-content">
+                <span class="badge reveal-fade">Nuestra Esencia</span>
+                <h3 class="section-title reveal-text">Elaboración Artesanal con Devoción</h3>
+                <p class="reveal-fade" style="transition-delay: 0.2s">En Mole del Refugio, cada lote es una ceremonia. Tostamos y molemos a mano nuestra selección exclusiva de chiles, semillas y especias, logrando un equilibrio perfecto entre dulzor, picor y profundidad.</p>
+                <p class="reveal-fade" style="transition-delay: 0.4s">El "platillo divino" no es solo un eslogan, es nuestra promesa de calidad y respeto por las recetas de antaño que han sido el corazón de las reuniones familiares.</p>
             </div>
-            <div class="split-image reveal fade-left">
+            <div class="split-image parallax-img-container reveal-scale">
                 <div class="image-placeholder glass-panel">
-                    <div class="pattern-overlay"></div>
+                    <div class="pattern-overlay parallax-img"></div>
+                    <div class="glow-effect"></div>
                     <span>Tradición y Sabor</span>
                 </div>
             </div>
@@ -98,27 +111,36 @@
     <!-- Features / Ingredients -->
     <section class="section ingredients" id="ingredientes">
         <div class="container">
-            <div class="text-center reveal fade-up">
-                <span class="badge">Selección Celestial</span>
-                <h3 class="section-title">Ingredientes de Primera</h3>
-                <p class="section-subtitle">Una sinfonía de sabores naturales sin conservadores.</p>
+            <div class="text-center" style="margin-bottom: 60px;">
+                <span class="badge reveal-fade">Selección Celestial</span>
+                <h3 class="section-title reveal-text">Ingredientes de Primera</h3>
+                <p class="section-subtitle reveal-fade" style="transition-delay: 0.2s">Una sinfonía de sabores naturales sin conservadores.</p>
             </div>
             
             <div class="grid-features">
-                <div class="feature-card glass-panel reveal fade-up" style="transition-delay: 100ms;">
-                    <div class="icon-wrapper">🌶️</div>
-                    <h4>Chiles Selectos</h4>
-                    <p>Una mezcla secreta de chiles pasilla, mulato y ancho tostados a la perfección.</p>
+                <div class="feature-card glass-panel tilt-card hover-target reveal-up" style="transition-delay: 0.1s;">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="icon-wrapper floating">🌶️</div>
+                        <h4>Chiles Selectos</h4>
+                        <p>Una mezcla secreta de chiles pasilla, mulato y ancho tostados a la perfección.</p>
+                    </div>
                 </div>
-                <div class="feature-card glass-panel reveal fade-up" style="transition-delay: 200ms;">
-                    <div class="icon-wrapper">🍫</div>
-                    <h4>Cacao Puro</h4>
-                    <p>Un toque de cacao de origen que aporta sedosidad y notas profundas al paladar.</p>
+                <div class="feature-card glass-panel tilt-card hover-target reveal-up" style="transition-delay: 0.3s;">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="icon-wrapper floating" style="animation-delay: 0.5s;">🍫</div>
+                        <h4>Cacao Puro</h4>
+                        <p>Un toque de cacao de origen que aporta sedosidad y notas profundas al paladar.</p>
+                    </div>
                 </div>
-                <div class="feature-card glass-panel reveal fade-up" style="transition-delay: 300ms;">
-                    <div class="icon-wrapper">🌰</div>
-                    <h4>Semillas Tostadas</h4>
-                    <p>Almendras, nueces y ajonjolí que otorgan textura y un sabor inigualable.</p>
+                <div class="feature-card glass-panel tilt-card hover-target reveal-up" style="transition-delay: 0.5s;">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="icon-wrapper floating" style="animation-delay: 1s;">🌰</div>
+                        <h4>Semillas Tostadas</h4>
+                        <p>Almendras, nueces y ajonjolí que otorgan textura y un sabor inigualable.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,13 +149,14 @@
     <!-- Call to Action / Contact -->
     <section class="section cta" id="contacto">
         <div class="container">
-            <div class="cta-box glass-panel reveal fade-up">
-                <h2>Lleva el platillo divino a tu mesa</h2>
-                <p>Haz tu pedido hoy y descubre por qué Mole del Refugio es la elección de los paladares más exigentes.</p>
-                <form class="contact-form" onsubmit="event.preventDefault();">
+            <div class="cta-box glass-panel reveal-scale">
+                <div class="glow-effect"></div>
+                <h2 class="reveal-text">Lleva el platillo divino a tu mesa</h2>
+                <p class="reveal-fade" style="transition-delay: 0.2s">Haz tu pedido hoy y descubre por qué Mole del Refugio es la elección de los paladares más exigentes.</p>
+                <form class="contact-form reveal-fade" style="transition-delay: 0.4s" onsubmit="event.preventDefault();">
                     <div class="input-group">
-                        <input type="email" placeholder="Tu correo electrónico" required>
-                        <button type="submit" class="btn-primary">Hacer Pedido</button>
+                        <input type="email" placeholder="Tu correo electrónico" required class="hover-target">
+                        <button type="submit" class="btn-primary hover-target">Hacer Pedido</button>
                     </div>
                 </form>
             </div>
@@ -143,18 +166,18 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
-            <div class="footer-brand">
+            <div class="footer-brand reveal-fade">
                 <h4>Mole del Refugio</h4>
                 <p>El platillo divino.</p>
             </div>
-            <div class="footer-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#historia">Historia</a>
-                <a href="#contacto">Contacto</a>
+            <div class="footer-links reveal-fade" style="transition-delay: 0.1s">
+                <a href="#inicio" class="hover-target">Inicio</a>
+                <a href="#historia" class="hover-target">Historia</a>
+                <a href="#contacto" class="hover-target">Contacto</a>
             </div>
-            <div class="footer-social">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
+            <div class="footer-social reveal-fade" style="transition-delay: 0.2s">
+                <a href="#" class="hover-target">Instagram</a>
+                <a href="#" class="hover-target">Facebook</a>
             </div>
         </div>
         <div class="footer-bottom">
